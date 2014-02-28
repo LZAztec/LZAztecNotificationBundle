@@ -1,0 +1,38 @@
+{
+    "name": "lzaztec/notification-bundle",
+    "description": "This Bundle integrates Dklab Realplexor comet server (or other) functionality into a Symfony2 project.",
+    "keywords": ["dklab realplexor", "comet", "push", "notification"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name":     "Roman Matveev",
+            "email":    "lion.aztec@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/framework-bundle": "2.*"
+    },
+    "repositories":[
+        {
+            "type":"package",
+            "package":{
+                "name":"dklab/realplexor",
+                "version":"1.41",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/DmitryKoterov/dklab_realplexor",
+                    "reference":"master"
+                },
+                "autoload":{
+                    "classmap":["api/php/Dklab/"]
+                }
+            }
+        }
+    ],
+    "autoload": {
+        "psr-0": { "LZAztec\\Bundle\\NotificationBundle": "" }
+    },
+    "target-dir": "LZAztec/Bundle/NotificationBundle"
+}
