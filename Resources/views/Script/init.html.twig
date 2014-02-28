@@ -1,0 +1,10 @@
+<script type="text/javascript" src="{{ asset('bundles/smnotification/vendor/dklab/dklab_realplexor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/smnotification/js/notification_controller.js') }}"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    var {{ variableName }} = new NotificationController({
+        host: "{{ 'http://' ~ jsApiNotificationHost() }}",
+        namespace: "{{ getParameter('lzaztec_notification.realplexor_ns') }}"
+    });
+    //]]>
+</script>

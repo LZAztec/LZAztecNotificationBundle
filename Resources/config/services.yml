@@ -1,0 +1,22 @@
+parameters:
+    lzaztec_notification.bundle.ns: LZAztec\NotificationBundle
+    lzaztec_notification.service.ns: %lzaztec_notification.bundle.ns%\Service
+    lzaztec_notification.adapter.ns: %lzaztec_notification.bundle.ns%\Adapter
+
+services:
+
+  # Adapters
+  lzaztec_notification.adapter.realplexor:
+    class: %lzaztec_notification.adapter.ns%\Comet\RealplexorAdapter
+    arguments: [%lzaztec_notification.realplexor_host%, %lzaztec_notification.realplexor_port%, %lzaztec_notification.realplexor_ns%]
+
+  # Notification service
+  lzaztec_notification.service.notification:
+    class: %lzaztec_notification.service.ns%\Notification\NotificationService
+
+  # Twig extension
+  lzaztec_notification.twig.extension:
+    class: %lzaztec_notification.service.ns%\Twig\Extension\NotificationExtension
+    arguments: [ @service_container ]
+    tags:
+        - { name: twig.extension }
