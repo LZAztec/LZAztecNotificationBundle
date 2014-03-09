@@ -1,7 +1,7 @@
 LZAztecNotificationBundle
 =========================
 
-This bundle provides intergration with a Dklab Realplexor (or other) comet server
+This bundle provides intergration with a [Dklab Realplexor](https://github.com/DmitryKoterov/dklab_realplexor) (or other) comet server
 
 ### Installation
 
