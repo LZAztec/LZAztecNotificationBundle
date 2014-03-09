@@ -5,8 +5,6 @@ This bundle provides intergration with a Dklab Realplexor (or other) comet serve
 
 ### Installation
 
-#### Bundle and Dependencies
-
 For Symfony 2.0.x:
 
 add to your application `deps` file:
