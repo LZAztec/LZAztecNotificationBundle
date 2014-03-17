@@ -32,7 +32,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "LZAztec\\Bundle\\NotificationBundle": "" }
+        "psr-0": { "LZAztec\\NotificationBundle": "" }
     },
-    "target-dir": "LZAztec/Bundle/NotificationBundle"
+    "target-dir": "LZAztec/NotificationBundle"
 }
