@@ -25,7 +25,7 @@ add to your apllication `AppKernel.php` file:
     {
         $bundles = array(
             // ...
-            new LZAztec\LZAztecNotificationBundle\LZAztecNotificationBundle(),
+            new LZAztec\NotificationBundle\LZAztecNotificationBundle(),
         );
 ```
 
