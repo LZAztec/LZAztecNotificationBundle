@@ -21,26 +21,34 @@ add to your application `deps` file:
 
 add to your apllication `AppKernel.php` file:
 ```php
- public function registerBundles()
+
+    // app/AppKernel.php
+
+    public function registerBundles()
     {
-        $bundles = array(
+        return array(
             // ...
             new LZAztec\NotificationBundle\LZAztecNotificationBundle(),
+            // ...
         );
+    }
 ```
 
 add to your apllication `autoload.php` file:
 ```php
-$loader->registerNamespaces(array(
-    // ...
-    'LZAztec'                 => __DIR__.'/../vendor/bundles',
-));
 
-$loader->registerPrefixes(array(
-    // ...
-    // Load realplexor api
-    'Dklab_'         => __DIR__.'/../vendor/Dklab/Reaplexor/api/php',
-));
+    // app/autoload.php
+
+    $loader->registerNamespaces(array(
+        // ...
+        'LZAztec'                 => __DIR__.'/../vendor/bundles',
+    ));
+
+    $loader->registerPrefixes(array(
+        // ...
+        // Load realplexor api
+        'Dklab_'         => __DIR__.'/../vendor/Dklab/Reaplexor/api/php',
+    ));
 ```
 
 ### Configuration
