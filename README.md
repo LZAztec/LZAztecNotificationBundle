@@ -16,7 +16,7 @@ add to your application `deps` file:
 
 [LZAztecNotificationBundle]
     git=https://github.com/LZAztec/LZAztecNotificationBundle.git
-    target=/bundles/LZAztec/LZAztecNotificationBundle
+    target=/bundles/LZAztec/NotificationBundle
 ```
 
 add to your apllication `AppKernel.php` file:
