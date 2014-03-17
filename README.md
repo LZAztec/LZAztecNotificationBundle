@@ -42,3 +42,11 @@ $loader->registerPrefixes(array(
     'Dklab_'         => __DIR__.'/../vendor/Dklab/Reaplexor/api/php',
 ));
 ```
+
+### Configuration
+
+```yml
+lz_aztec_notification:
+    realplexor_ns: demo_               # Realplexor namespace to use (allowed alphanumeric characters and the underscore character)
+    js_api_host: notify.localhost      # JS API host to listen for notifications
+```
