@@ -73,7 +73,7 @@ class NotificationExtension extends \Twig_Extension
      */
     public function getJsApiHost()
     {
-        return $this->getParameterFromContainer('lzaztec_notification.js_api_host');
+        return $this->getParameterFromContainer('lz_aztec_notification.js_api_host');
     }
 
     /**

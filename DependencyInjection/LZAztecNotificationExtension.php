@@ -21,17 +21,17 @@ class LZAztecNotificationExtension extends Extension
     {
         $config = $this->processConfiguration(new Configuration(), $configs);
 
-        $container->setParameter('lzaztec_notification.realplexor_host', $config['realplexor_host']);
-        $container->setParameter('lzaztec_notification.realplexor_port', $config['realplexor_port']);
-        $container->setParameter('lzaztec_notification.realplexor_ns', $config['realplexor_ns']);
-        $container->setParameter('lzaztec_notification.js_api_host', $config['js_api_host']);
+        $container->setParameter('lz_aztec_notification.realplexor_host', $config['realplexor_host']);
+        $container->setParameter('lz_aztec_notification.realplexor_port', $config['realplexor_port']);
+        $container->setParameter('lz_aztec_notification.realplexor_ns', $config['realplexor_ns']);
+        $container->setParameter('lz_aztec_notification.js_api_host', $config['js_api_host']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
         foreach ($config['enabled_adapters'] as $adapter => $enabled) {
             if ($enabled) {
-                $container->getDefinition(sprintf('lzaztec_notification.adapter.%s', $adapter))->addTag('lzaztec_notification.adapter');
+                $container->getDefinition(sprintf('lz_aztec_notification.adapter.%s', $adapter))->addTag('lz_aztec_notification.adapter');
             }
         }
     }

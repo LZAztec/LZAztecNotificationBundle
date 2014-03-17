@@ -17,13 +17,13 @@ class AddAdapterPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('lzaztec_notification.service.notification')) {
+        if (!$container->hasDefinition('lz_aztec_notification.service.notification')) {
             return;
         }
 
-        $mobileDetectorDefinition = $container->findDefinition('lzaztec_notification.service.notification');
+        $mobileDetectorDefinition = $container->findDefinition('lz_aztec_notification.service.notification');
 
-        foreach($container->findTaggedServiceIds('lzaztec_notification.adapter') as $id => $attributes) {
+        foreach($container->findTaggedServiceIds('lz_aztec_notification.adapter') as $id => $attributes) {
             $mobileDetectorDefinition->addMethodCall('addAdapter', array($container->getDefinition($id)));
         }
     }
