@@ -141,7 +141,13 @@ AbstractAdapter.prototype =
         host: 'localhost',
         namespace: 'sm_'
     },
-    instance: null
+    instance: null,
+    prepareUrlProtocol: function(url)
+    {
+        var protocol = window.location.protocol || 'http:';
+        url = protocol + '//' + url.replace(/http:|https:/, '').replace(/\/\//, '');
+        return url;
+    }
 }
 
 /**
@@ -152,9 +158,10 @@ AbstractAdapter.prototype =
 function RealplexorAdapter(settings)
 {
     AbstractAdapter.call(this, settings);
+    var url = AbstractAdapter.prototype.prepareUrlProtocol.call(this, this.settings.host);
 
     this.instance = new Dklab_Realplexor(
-        this.settings.host,  // Realplexor's engine URL; must be a sub-domain
+        url,                    // Realplexor's engine URL; must be a sub-domain
         this.settings.namespace // namespace
     );
 }
