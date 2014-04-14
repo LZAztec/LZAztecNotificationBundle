@@ -99,7 +99,7 @@ To initialize scripts put code `{{ init_notification('varName') }}` __AFTER__ jq
 
 ```javascript
 
-    <script type="text/javascript" src="path/to/jquery.min.js">
+    <script type="text/javascript" src="path/to/jquery.min.js"></script>
 
     {{ init_notification('varName') }}
 
