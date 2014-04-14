@@ -5,7 +5,40 @@ This bundle provides intergration with a [Dklab Realplexor](https://github.com/D
 
 ### Installation
 
-For Symfony 2.0.x:
+
+#### For Symfony >2.1:
+
+add to your `composer.json` file:
+```json
+
+    /// composer.json
+    "require": {
+        // ...
+        "lzaztec/notification-bundle": "dev-master"
+    },
+    "repositories": [
+        // ...
+        {
+            "type":"package",
+            "package":{
+                "name":"dklab/realplexor",
+                "version": "1.41",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/DmitryKoterov/dklab_realplexor",
+                    "reference":"master"
+                },
+                "autoload":{
+                    "classmap":["api/php/Dklab/"]
+                }
+            }
+        }
+    ]
+```
+
+and run `composer update lzaztec/notification-bundle`
+
+#### For Symfony 2.0.x:
 
 add to your application `deps` file:
 
@@ -54,7 +87,26 @@ add to your apllication `autoload.php` file:
 ### Configuration
 
 ```yml
-lz_aztec_notification:
-    realplexor_ns: demo_               # Realplexor namespace to use (allowed alphanumeric characters and the underscore character)
-    js_api_host: notify.localhost      # JS API host to listen for notifications
+    lz_aztec_notification:
+        realplexor_ns: demo_               # Realplexor namespace to use (allowed alphanumeric characters and the underscore character)
+        js_api_host: notify.localhost      # JS API host to listen for notifications
+```
+
+### Usage
+
+Function `init_notification()` takes only one parameter, which will contain an instance of notification controller class.
+To initialize scripts put code `{{ init_notification('var_name') }}` __AFTER__ jquery initialization, next you need to suscribe channel and start listen it.
+
+```javascript
+
+    <script type="text/javascript" src="path/to/jquery.min.js">
+
+    {{ init_notification('varName') }}
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            varName.subscribeChannel('ChannelName');
+            varName.startListen();
+        });
+    </script>
 ```
