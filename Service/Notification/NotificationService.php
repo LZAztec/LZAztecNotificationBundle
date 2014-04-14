@@ -11,7 +11,7 @@ use LZAztec\NotificationBundle\Notification\NotifyingEntityInterface;
  * Class NotificationService
  * @package LZAztec\NotificationBundle\Service\Notification
  */
-class NotificationService
+class NotificationService implements NotificationServiceInterface
 {
     /**
      * @var AdapterInterface[]
