@@ -95,7 +95,7 @@ add to your apllication `autoload.php` file:
 ### Usage
 
 Function `init_notification()` takes only one parameter, which will contain an instance of notification controller class.
-To initialize scripts put code `{{ init_notification('varName') }}` __AFTER__ jquery initialization, next you need to suscribe channel and start listen it.
+To initialize scripts put code `{{ init_notification('varName') }}` __AFTER__ jquery initialization, next you need to subscribe channel and start listen it.
 
 ```javascript
 
